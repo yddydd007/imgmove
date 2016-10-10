@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #dv{
+            border: 1px solid red;
+            width: 500px;
+            height: 500px;
+            background-color: yellowgreen;
+            margin-top: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input  id="in" type="button" value="动画"/>
+<div id="dv">
+
+</div>
+<script>
+        document.getElementById("in").onclick= function () {
+            var dvObj=document.getElementById("dv");
+            var i=0;
+            function fn(){
+                i=i+10;
+                dvObj.style.left=i+"px";
+                if(i>=600){
+                    dvObj.style.left="600px";
+                    clearInterval(timeID);
+                }
+            }
+            var timeID=setInterval(
+                    fn,10)
+        }
+
+</script>
+</body>
+</html>
